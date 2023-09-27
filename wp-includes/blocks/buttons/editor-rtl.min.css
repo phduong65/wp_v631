@@ -1,0 +1,21 @@
+_char_width() * 3;
+gColorWellWidth = 22;
+gColumnWidth = 30;
+gFaceNamePopupWidth	= gDefaultEncodingPopupWidth + gMarginWidth + (gGap * 2);
+gMMListWidth = max (zstring_width(zstring: '$$$IDS_MM_NONE'), 
+					zstring_width(zstring: '$$$IDS_MM_EMBED'), 
+					zstring_width(zstring: '$$$IDS_MM_REF')) + max_char_width() * 3;
+					
+gPopupsWidth = max (gLangaugeScriptPopupWidth, gFontNamePopupWidth, gFaceNamePopupWidth);
+
+gTextBGTextWidth = max (zstring_width (zstring :'$$$/Dialogs/ConfigDialog/TextColor')
+							, zstring_width (zstring :'$$$/Dialogs/ConfigDialog/Background'));
+
+gDialogClusterWidth = gMMListWidth + zstring_width(zstring: '$$$/Dialogs/ConfigDialogHtml/Mult') + gMarginWidth * 3;
+gColorWellPartWidth = gDialogClusterWidth / 3;
+gTxtBGGap = gColorWellPartWidth - zstring_width (zstring: '$$$/Dialogs/ConfigDialog/TextColor') - gColorWellWidth - gMarginWidth;
+gBGLinksGap = gColorWellPartWidth - zstring_width (zstring: '$$$/Dialogs/ConfigDialog/Background') - gColorWellWidth - gMarginWidth;
+
+dialog( name: '$$$/Dialogs/ConfigDialogHtml/DialogTitle')
+{
+	view (align_children: 
